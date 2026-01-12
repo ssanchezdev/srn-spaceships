@@ -30,29 +30,29 @@ Dentro del proyecto debemos ir a la carpeta "mobile"
 
 cd mobile
 
-# Instalar dependencias
+Instalar dependencias
 
 npm install
 
-# Ejecutar app
+Ejecutar app
 
 npx expo start -c
 
 ## 3. Preguntas y Respuetas
 
-1- EAS Build: Describe los pasos y configuración necesaria en eas.json para generar .apk e .ipa de producción.
+# 1- EAS Build: Describe los pasos y configuración necesaria en eas.json para generar .apk e .ipa de producción.
 
-## Para generar un APK/IPA listo para utilizarse en tiendas vamos a usar "EAS" (Expo Application Services).
+Para generar un APK/IPA listo para utilizarse en tiendas vamos a usar "EAS" (Expo Application Services).
 
-## 1.- Instalar la CLI -> npm install -g eas-cli
+1.- Instalar la CLI -> npm install -g eas-cli
 
-## 2.- Auntenticación -> eas login
+2.- Auntenticación -> eas login
 
-## 3.- Configuración Inicial -> eas build:configure
+3.- Configuración Inicial -> eas build:configure
 
-## 4.- En el archivo "eas.json", definimos el perfil de producción
+4.- En el archivo "eas.json", definimos el perfil de producción
 
-"
+
 {
 "build": {
 "production": {
@@ -61,26 +61,24 @@ npx expo start -c
 }
 }
 }
-"
 
-## 5.- Ejecutamos build -> eas build --profile production --platform android
 
-2- Offline First: Si la app debiera funcionar sin internet, ¿qué estrategia
-de BD local usarías (SQLite, Realm, etc.) y por qué?
+5.- Ejecutamos build -> eas build --profile production --platform android
 
-## Para garantizar que la aplicación funcione sin internet, implementamos SQLite por vía de expo-sqlite
+# 2- Offline First: Si la app debiera funcionar sin internet, ¿qué estrategia de BD local usarías (SQLite, Realm, etc.) y por qué?
 
-## ¿Porque?
+Para garantizar que la aplicación funcione sin internet, implementamos SQLite por vía de expo-sqlite
 
-## A diferencia de AsyncStorage que almacena valores de tamaño simples y límitados, con SQLite que es una BD relacional completa, nos permite crear índices para búsquedas y filtrados eficientes y nos deja manejar grandes volúmenes de datos de forma comoda sin obstaculizar otros hilos de procesos de JavaScript.
+¿Porque?
 
-3- Apple Guideline 4.2: Si Apple rechaza la app por "Minimum
-Functionality", ¿qué solución técnica o de producto propondrías?
+A diferencia de AsyncStorage que almacena valores de tamaño simples y límitados, con SQLite que es una BD relacional completa, nos permite crear índices para búsquedas y filtrados eficientes y nos deja manejar grandes volúmenes de datos de forma comoda sin obstaculizar otros hilos de procesos de JavaScript.
 
-## En caso de que Apple directamente rechace la app por considerarla de "funcionalidad mínima", mi propuesta técnica y de producto como tal es:
+# 3- Apple Guideline 4.2: Si Apple rechaza la app por "Minimum Functionality", ¿qué solución técnica o de producto propondrías?
 
-## 1.- Persistencia Local -> Permitir al usuario guardar naves y añadir notas personales, guardándolas en la BD local.
+En caso de que Apple directamente rechace la app por considerarla de "funcionalidad mínima", mi propuesta técnica y de producto como tal es:
 
-## 2.- Comparador de Naves -> Implementar una neuva pantalla que permita seleccionar 2 naves y comparar sus estadísticas visualmente.
+1.- Persistencia Local -> Permitir al usuario guardar naves y añadir notas personales, guardándolas en la BD local.
 
-## 3.- Widgets Nativos -> Desarrollar un Widget para IOS que muestre una "Nave del día" en la pantala de inicio, aumentando la retención y el valor de la app fuera de la ejecución principal.
+2.- Comparador de Naves -> Implementar una neuva pantalla que permita seleccionar 2 naves y comparar sus estadísticas visualmente.
+
+3.- Widgets Nativos -> Desarrollar un Widget para IOS que muestre una "Nave del día" en la pantala de inicio, aumentando la retención y el valor de la app fuera de la ejecución principal.
